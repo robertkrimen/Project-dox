@@ -1,0 +1,50 @@
+=pod
+
+=head1 NAME
+
+
+Moose::Manual::Sugar2Meta - The meta equivalents to exported sugar
+
+=head1 DESCRIPTION
+
+
+When you C<use Moose;> you export some sugar that operates on the meta object for you. The information below covers (at a very high level) how the sugar does its business on the meta object.
+
+=head1 SUGAR
+
+
+=head2 has
+
+
+C<has> will add an attribute to your class. The C<$meta> equivalent is C<add_attribute>
+
+=over 
+
+=item C<has> will accept an array reference as the first argument, creating an attribute with the given options for each item. C<add_attribute> has no such capability
+
+=item C<has> will include some information about the calling class (via the option C<definition_context>)
+
+=back
+
+=head3 Sugar
+
+
+    has 'x' => (is => 'rw', isa => 'Int')
+
+=head3 Meta
+
+
+    $meta->add_attribute( 'x' => (is => 'rw', isa => 'Int') )
+
+=head1 AUTHOR
+
+Robert Krimen
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2009
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut

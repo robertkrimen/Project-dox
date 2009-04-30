@@ -5,3 +5,4 @@ make:
 
 clean:
 	rm -rf build
+	rm *.tmp

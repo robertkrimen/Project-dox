@@ -1,3 +1,0 @@
-=head1 Hello, World.
-
-Yoink!
