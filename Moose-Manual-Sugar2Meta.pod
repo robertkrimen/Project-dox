@@ -28,11 +28,13 @@ C<has> will add an attribute to your class. The C<$meta> equivalent is C<add_att
 
 =head3 Sugar
 
+L<Moose::>
 
     has 'x' => (is => 'rw', isa => 'Int')
 
 =head3 Meta
 
+L<Moose::Meta::Class>
 
     $meta->add_attribute( 'x' => (is => 'rw', isa => 'Int') )
 
