@@ -10,6 +10,10 @@ Moose::Manual::Sugar2Meta - The meta equivalents to exported sugar
 
 When you C<use Moose;> you export some sugar that operates on the meta object for you. The information below covers (at a very high level) how the sugar does its business on the meta object.
 
+=head1 DISCLAIMER
+
+This document is meant to provide an overview and does not constitute an API. For more information about a method see its corresponding package documentation
+
 =head1 SUGAR
 
 
