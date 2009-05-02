@@ -2,11 +2,9 @@
 
 =head1 NAME
 
-
 Moose::Manual::Sugar2Meta - The meta equivalents to exported sugar
 
 =head1 DESCRIPTION
-
 
 When you C<use Moose;> you export some sugar that operates on the meta object for you. The information below covers (at a very high level) how the sugar does its business on the meta object.
 
@@ -16,17 +14,13 @@ This document is meant to provide an overview and does not constitute an API. Fo
 
 =head1 SUGAR
 
-
 =head2 has
-
 
 C<has> will add an attribute to your class. The C<$meta> equivalent is C<add_attribute>
 
 =over 
 
 =item C<has> will accept an array reference as the first argument, creating an attribute with the given options for each item. C<add_attribute> has no such capability
-
-=item C<has> will include some information about the calling class (via the option C<definition_context>)
 
 =back
 
@@ -41,6 +35,20 @@ L<Moose::>
 L<Moose::Meta::Class>
 
     $meta->add_attribute( 'x' => (is => 'rw', isa => 'Int') )
+
+=head2 after / before / around
+
+C<after>, C<before>, and C<around> are method modifiers. The C<$meta> equivalent is C<add_after_method_modifier>, C<add_before_method_modifier>, and C<add_around_method_modifier>, respectively
+
+For more advanced usage, you can look at C<Moose::Util::add_method_modifier> in L<Moose::Util>
+
+=head3 Sugar
+
+    after 'foo' => sub { ... }
+
+=head3 Meta
+
+    $meta->add_after_method_modifier( foo => sub { ... } )
 
 =head1 AUTHOR
 
