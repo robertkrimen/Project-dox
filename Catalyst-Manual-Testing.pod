@@ -1,0 +1,11 @@
+=pod
+
+Test that forms return the right error messages
+
+Test that paths exist and do what you think they should
+
+Make sure API paths return JSON or whatever
+
+Make sure non-API paths return HTML, etc.
+
+=cut
